@@ -16,10 +16,18 @@ async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
   return [
     {
-      id: '728ed52f',
+      status: 'Online',
+      name: 'Quality',
+      teams: 'Air Force',
+      discordtag: 'Quality#1234',
+      id: 23,
       amount: 100,
-      status: 'pending',
-      email: 'm@example.com',
+      kills: 4354,
+      deaths: 234,
+      kd: 18.6,
+      wins: 345,
+      losses: 2322,
+      ping: 44,
     },
     // ...
   ];
