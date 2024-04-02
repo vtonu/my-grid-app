@@ -4,6 +4,7 @@ import { ColumnDef } from '@tanstack/react-table';
 import { Badge } from '@/components/ui/badge';
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -122,10 +123,20 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'ping',
     header: 'Ping',
+    cell: (context) => <span>{context.row.original.ping}ms</span>,
   },
   {
     accessorKey: 'discordtag',
     header: 'Discord',
+    cell: (context) => (
+      <div className="flex items-center">
+        <Avatar>
+          <AvatarImage src="https://icons.iconarchive.com/icons/3xhumed/mega-games-pack-37/256/GTA-Episodes-from-Liberty-City-2-icon.png" />
+          <AvatarFallback>CN</AvatarFallback>
+        </Avatar>
+        <span className="ml-2">{context.row.original.discordtag}</span>
+      </div>
+    ),
   },
   {
     accessorKey: 'status',

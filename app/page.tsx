@@ -11,6 +11,7 @@
 
 import { Payment, columns } from './payments/columns';
 import { DataTable } from './payments/data-table';
+import { Theme } from '@radix-ui/themes';
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -88,9 +89,9 @@ async function getData(): Promise<Payment[]> {
       id: 346,
       kills: 223,
       deaths: 127,
-      kd: 1.8,
+      kd: 1.89,
       wins: 33,
-      losses: 5,
+      losses: 0,
       ping: 25,
     },
     {
@@ -101,8 +102,8 @@ async function getData(): Promise<Payment[]> {
       id: 46,
       kills: 23,
       deaths: 27,
-      kd: 1,
-      wins: 3,
+      kd: 1.08,
+      wins: 500,
       losses: 2,
       ping: 75,
     },
@@ -114,7 +115,7 @@ async function getData(): Promise<Payment[]> {
       id: 121,
       kills: 223,
       deaths: 227,
-      kd: 2.5,
+      kd: 2.51,
       wins: 333,
       losses: 225,
       ping: 115,
@@ -127,11 +128,19 @@ export default async function DemoPage() {
   const data = await getData();
 
   return (
-    <div className="container mx-auto p-2 flex justify-center items-center flex-col">
-      <h1 className="py-4 text-4xl font-extrabold bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-600 via-zinc-300 to-teal-400 text-transparent bg-clip-text">
-        Leaderboard
-      </h1>
-      <DataTable columns={columns} data={data} />
-    </div>
+    <Theme
+      style={{
+        backgroundImage: "url('./background.jpg')",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+      }}>
+      <div className="container mx-auto p-2 flex justify-center items-center flex-col">
+        <h1 className="py-4 text-4xl font-extrabold bg-gradient-to-b from-blue-200 via-teal-300 to-sky-600 text-transparent bg-clip-text">
+          Leaderboard
+        </h1>
+
+        <DataTable columns={columns} data={data} />
+      </div>
+    </Theme>
   );
 }
