@@ -136,7 +136,7 @@ export default async function DemoPage() {
         backgroundRepeat: 'no-repeat',
       }}>
       <div className="container mx-auto flex flex-col">
-        <h1 className="pt-4 text-4xl font-extrabold bg-gradient-to-b from-blue-300 via-teal-400 to-sky-500 text-transparent bg-clip-text">
+        <h1 className="pt-4 text-4xl font-extrabold bg-gradient-to-b from-teal-300 via-teal-400 to-teal-500 text-transparent bg-clip-text">
           Leaderboard
         </h1>
         <div className="py-2">
