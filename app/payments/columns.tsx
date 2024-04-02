@@ -9,8 +9,8 @@ import { Button } from '@/components/ui/button';
 // You can use a Zod schema here if you want.
 export type Payment = {
   id: number;
-  amount: number;
-  status: 'Online' | 'Offline';
+
+  status: 'Online' | 'Offline' | 'Away';
   name: string;
   kills: number;
   deaths: number;
@@ -133,7 +133,12 @@ export const columns: ColumnDef<Payment>[] = [
       <Badge
         variant="outline"
         style={{
-          backgroundColor: context.row.original.status === 'Online' ? '#32CD32' : 'red',
+          backgroundColor:
+            context.row.original.status === 'Online'
+              ? '#32CD32'
+              : context.row.original.status === 'Away'
+              ? 'orange'
+              : 'red',
           color: 'white',
         }}>
         {context.row.original.status}
