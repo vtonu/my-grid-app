@@ -1,16 +1,5 @@
-/* export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        Test
-      </div>
-    </main>
-  );
-}
- */
-
-import { Payment, columns } from './payments/columns';
-import { DataTable } from './payments/data-table';
+import { Payment, columns } from './columns';
+import { DataTable } from './data-table';
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
