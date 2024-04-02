@@ -135,9 +135,9 @@ export default async function DemoPage() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}>
-      <div className="container mx-auto flex flex-col">
-        <h1 className="pt-4 text-4xl font-extrabold bg-gradient-to-b from-teal-300 via-teal-400 to-teal-500 text-transparent bg-clip-text">
-          Leaderboard
+      <div className="container mx-auto flex flex-col items-center justify-center min-h-screen">
+        <h1 className="pt-2 text-4xl font-extrabold bg-gradient-to-b from-teal-500 via-teal-400 to-teal-500 text-transparent bg-clip-text">
+          LEADERBOARD
         </h1>
         <div className="py-2">
           <Button color="teal" variant="soft">

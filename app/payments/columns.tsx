@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { BarChartIcon } from '@radix-ui/react-icons';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -123,7 +124,12 @@ export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'ping',
     header: 'Ping',
-    cell: (context) => <span>{context.row.original.ping}ms</span>,
+    cell: (context) => (
+      <div className="flex items-center">
+        <BarChartIcon />
+        <span className="ml-2">{context.row.original.ping}ms</span>
+      </div>
+    ),
   },
   {
     accessorKey: 'discordtag',
