@@ -127,7 +127,10 @@ export default async function DemoPage() {
   const data = await getData();
 
   return (
-    <div className="container mx-auto py-10">
+    <div className="container mx-auto p-2 flex justify-center items-center flex-col">
+      <h1 className="py-4 text-4xl font-extrabold bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-blue-600 via-zinc-300 to-teal-400 text-transparent bg-clip-text">
+        Leaderboard
+      </h1>
       <DataTable columns={columns} data={data} />
     </div>
   );

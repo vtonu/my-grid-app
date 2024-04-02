@@ -5,8 +5,8 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Grid Table Example',
-  description: 'PTP Grid Table Example for FiveM Server',
+  title: 'Table Example',
+  description: 'PTP FiveM Server Grid Table Example',
 };
 
 export default function RootLayout({
