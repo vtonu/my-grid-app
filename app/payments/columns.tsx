@@ -25,7 +25,7 @@ export type Payment = {
 export const columns: ColumnDef<Payment>[] = [
   {
     accessorKey: 'id',
-    header: ({ column }) => {
+    /* header: ({ column }) => {
       return (
         <Button
           variant="ghost"
@@ -34,7 +34,8 @@ export const columns: ColumnDef<Payment>[] = [
           <ArrowUpDown className="ml-2 h-4 w-4" />
         </Button>
       );
-    },
+    }, */
+    header: 'ID',
   },
   {
     accessorKey: 'name',
