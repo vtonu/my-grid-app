@@ -12,6 +12,7 @@
 import { Payment, columns } from './payments/columns';
 import { DataTable } from './payments/data-table';
 import { Theme } from '@radix-ui/themes';
+import { Flex, Text, Button } from '@radix-ui/themes';
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
@@ -134,11 +135,15 @@ export default async function DemoPage() {
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
       }}>
-      <div className="container mx-auto p-2 flex justify-center items-center flex-col">
-        <h1 className="py-4 text-4xl font-extrabold bg-gradient-to-b from-blue-200 via-teal-300 to-sky-600 text-transparent bg-clip-text">
+      <div className="container mx-auto flex flex-col">
+        <h1 className="pt-4 text-4xl font-extrabold bg-gradient-to-b from-blue-300 via-teal-400 to-sky-500 text-transparent bg-clip-text">
           Leaderboard
         </h1>
-
+        <div className="py-2">
+          <Button color="teal" variant="soft">
+            Press 'Z' to close
+          </Button>
+        </div>
         <DataTable columns={columns} data={data} />
       </div>
     </Theme>
