@@ -6,6 +6,8 @@ import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { BarChartIcon } from '@radix-ui/react-icons';
+import React from 'react';
+import ReactCountryFlag from 'react-country-flag';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -22,6 +24,7 @@ export type Payment = {
   teams: string;
   ping: number;
   discordtag: string;
+  country: 'US' | 'CA' | 'GB' | 'AU' | 'DE' | 'FR' | 'JP' | 'CN' | 'IN' | 'BR';
 };
 
 export const columns: ColumnDef<Payment>[] = [
@@ -108,12 +111,14 @@ export const columns: ColumnDef<Payment>[] = [
     accessorKey: 'losses',
     header: ({ column }) => {
       return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
-          Losses
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
+        <div className="flex items-center">
+          <Button
+            variant="ghost"
+            onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}>
+            Losses
+            <ArrowUpDown className="ml-2 h-4 w-4" />
+          </Button>
+        </div>
       );
     },
   },
@@ -161,6 +166,24 @@ export const columns: ColumnDef<Payment>[] = [
         }}>
         {context.row.original.status}
       </Badge>
+    ),
+  },
+  {
+    accessorKey: 'country',
+    header: 'Country',
+    cell: (row) => (
+      <div className="flex items-center max-w-[10px]">
+        <ReactCountryFlag
+          countryCode={row.row.original.country}
+          svg
+          style={{
+            width: '1em',
+            height: '1em',
+          }}
+          title={row.row.original.country}
+        />
+        <span className="ml-2">{row.row.original.country}</span>
+      </div>
     ),
   },
 ];

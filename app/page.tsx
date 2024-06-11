@@ -16,6 +16,7 @@ import { Flex, Text, Button } from '@radix-ui/themes';
 
 async function getData(): Promise<Payment[]> {
   // Fetch data from your API here.
+
   return [
     {
       status: 'Online',
@@ -29,6 +30,7 @@ async function getData(): Promise<Payment[]> {
       wins: 1345,
       losses: 422,
       ping: 24,
+      country: 'CA',
     },
     {
       status: 'Online',
@@ -42,6 +44,7 @@ async function getData(): Promise<Payment[]> {
       wins: 53,
       losses: 56,
       ping: 93,
+      country: 'GB',
     },
     {
       status: 'Online',
@@ -55,6 +58,7 @@ async function getData(): Promise<Payment[]> {
       wins: 33,
       losses: 56,
       ping: 82,
+      country: 'DE',
     },
     {
       status: 'Online',
@@ -68,20 +72,9 @@ async function getData(): Promise<Payment[]> {
       wins: 23,
       losses: 256,
       ping: 133,
+      country: 'FR',
     },
-    {
-      status: 'Away',
-      name: 'Player Five',
-      teams: 'None',
-      discordtag: 'Five#2795',
-      id: 154,
-      kills: 23,
-      deaths: 67,
-      kd: 1.3,
-      wins: 3,
-      losses: 56,
-      ping: 33,
-    },
+
     {
       status: 'Online',
       name: 'Player Six',
@@ -94,6 +87,7 @@ async function getData(): Promise<Payment[]> {
       wins: 33,
       losses: 0,
       ping: 25,
+      country: 'BR',
     },
     {
       status: 'Online',
@@ -107,6 +101,7 @@ async function getData(): Promise<Payment[]> {
       wins: 500,
       losses: 2,
       ping: 75,
+      country: 'US',
     },
     {
       status: 'Online',
@@ -120,14 +115,27 @@ async function getData(): Promise<Payment[]> {
       wins: 333,
       losses: 225,
       ping: 115,
+      country: 'US',
     },
-    // ...
+    {
+      status: 'Away',
+      name: 'Player Five',
+      teams: 'None',
+      discordtag: 'Five#2795',
+      id: 154,
+      kills: 23,
+      deaths: 67,
+      kd: 1.3,
+      wins: 3,
+      losses: 56,
+      ping: 33,
+      country: 'US',
+    },
   ];
 }
 
 export default async function DemoPage() {
   const data = await getData();
-
   return (
     <Theme
       style={{
@@ -136,11 +144,11 @@ export default async function DemoPage() {
         backgroundRepeat: 'no-repeat',
       }}>
       <div className="container mx-auto flex flex-col items-center justify-center min-h-screen">
-        <h1 className="pt-2 text-4xl font-extrabold bg-gradient-to-b from-teal-500 via-teal-400 to-teal-500 text-transparent bg-clip-text">
+        <h1 className="text-xl font-extrabold bg-gradient-to-b from-teal-300 via-teal-400 to-teal-600 text-transparent bg-clip-text">
           LEADERBOARD
         </h1>
         <div className="py-2">
-          <Button color="teal" variant="soft">
+          <Button color="teal" variant="soft" className="cursor-pointer">
             Press 'Z' to close
           </Button>
         </div>
